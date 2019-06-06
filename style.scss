@@ -1,0 +1,90 @@
+// Google Font
+@import url('https://fonts.googleapis.com/css?family=Mandali&display=swap');
+
+// Color Variables
+$color-one: #f2f2f2;
+$color-two: #595959;
+$color-three: #1fafbf;
+$color-four: #042f40;
+$color-five: #f24150;
+
+// Universal Styles
+*,
+html,
+body {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Mandali', sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	padding-top: 2rem;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+li {
+	list-style-type: none;
+}
+
+main {
+	max-width: 1080px;
+}
+
+// Form styles
+.flashcard-form {
+	margin-bottom: 1rem;
+	text-align: center;
+	input {
+		border-radius: 8px;
+		border: 1px solid black;
+		height: 2.5rem;
+		width: 12rem;
+		font-size: 0.75rem;
+		margin-right: 0.5rem;
+	}
+	button {
+		height: 2.5rem;
+		width: 10rem;
+		background-color: $color-three;
+		border: none;
+		border-radius: 8px;
+		font-size: 1rem;
+	}
+}
+
+// Error Message
+.display-error {
+	text-align: center;
+	color: $color-five;
+	margin-bottom: 2rem;
+}
+
+// Flashcard Board
+ul {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 1rem;
+}
+
+.card {
+	background-color: $color-four;
+	color: $color-one;
+	border-radius: 8px;
+	height: 20rem;
+	text-align: center;
+	position: relative;
+	padding: 3rem 1rem;
+	.delete-card {
+		position: absolute;
+		right: 10px;
+		top: 0px;
+	}
+}

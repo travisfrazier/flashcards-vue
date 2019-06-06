@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Mandali&display=swap");
+*,
+html,
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Mandali', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+main {
+  max-width: 1080px;
+}
+
+.flashcard-form {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.flashcard-form input {
+  border-radius: 8px;
+  border: 1px solid black;
+  height: 2.5rem;
+  width: 12rem;
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+}
+
+.flashcard-form button {
+  height: 2.5rem;
+  width: 10rem;
+  background-color: #1fafbf;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.display-error {
+  text-align: center;
+  color: #f24150;
+  margin-bottom: 2rem;
+}
+
+ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.card {
+  background-color: #042f40;
+  color: #f2f2f2;
+  border-radius: 8px;
+  height: 20rem;
+  text-align: center;
+  position: relative;
+  padding: 3rem 1rem;
+}
+
+.card .delete-card {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+/*# sourceMappingURL=style.css.map */
