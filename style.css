@@ -59,7 +59,7 @@ main {
 .display-error {
   text-align: center;
   color: #f24150;
-  margin-bottom: 2rem;
+  margin-bottom: -2rem;
 }
 
 ul {
@@ -68,6 +68,21 @@ ul {
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 1rem;
+  padding-top: 4rem;
+}
+
+ul li {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+ul li:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.delete-card {
+  cursor: pointer;
 }
 
 .card {
@@ -84,5 +99,19 @@ ul {
   position: absolute;
   right: 10px;
   top: 0px;
+}
+
+.flip-enter-active {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.flip-enter {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.flip-leave {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

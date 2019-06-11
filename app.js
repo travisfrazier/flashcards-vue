@@ -24,20 +24,25 @@ const cards = [
 Vue.component('flashcard', {
 	props: ['front', 'back', 'flipped'],
 	template: `
-                <li v-on:click="flipCard">
-                    <p v-show="!flipped" class="card" key="front">
-                        {{ front }}
-                        <span class="delete-card">X</span>
-                    </p>
-                   <p v-show="flipped" class="card" key="back">
-                        {{ back }}
-                        <span class="delete-card">X</span>
-                    </p>
+				<li v-on:click="flipCard">
+					<transition-group name="flip">
+						<p v-show="!flipped" class="card" key="front">
+							{{ front }}
+							<span v-on:click="deleteCard(index)" class="delete-card">X</span>
+						</p>
+						<p v-show="flipped" class="card" key="back">
+							{{ back }}
+							<span v-on:click="deleteCard(index)" class="delete-card">X</span>
+						</p>
+					</transition-group>
                 </li>
     `,
 	methods: {
-		flipCard(flipped) {
-			this.$emit('clicked', flipped);
+		flipCard(card) {
+			this.$emit('clicked', card);
+		},
+		deleteCard() {
+			this.$emit('delete');
 		}
 	}
 });
@@ -45,11 +50,29 @@ Vue.component('flashcard', {
 new Vue({
 	el: '#flashcard-app',
 	data: {
-		cards: cards
+		cards: cards,
+		newFront: '',
+		newBack: '',
+		error: false
 	},
 	methods: {
-		flipCard(flipped) {
-			flipped.flipped = !flipped.flipped;
+		flipCard(card) {
+			card.flipped = !card.flipped;
+		},
+		addCard(e) {
+			e.preventDefault();
+			if (!this.newFront && !this.newBack) {
+				this.error = true;
+			} else {
+				this.cards.push({
+					front: this.newFront,
+					back: this.newBack,
+					flipped: false
+				});
+				this.newFront = '';
+				this.newBack = '';
+				this.error = false;
+			}
 		}
 	}
 });

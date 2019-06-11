@@ -64,7 +64,7 @@ main {
 .display-error {
 	text-align: center;
 	color: $color-five;
-	margin-bottom: 2rem;
+	margin-bottom: -2rem;
 }
 
 // Flashcard Board
@@ -72,6 +72,17 @@ ul {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 1rem;
+	padding-top: 4rem;
+	li {
+		transition: all 0.2s ease-in-out;
+		&:hover {
+			transform: scale(1.02);
+		}
+	}
+}
+
+.delete-card {
+	cursor: pointer;
 }
 
 .card {
@@ -87,4 +98,17 @@ ul {
 		right: 10px;
 		top: 0px;
 	}
+}
+
+// Flip styles
+.flip-enter-active {
+	transition: all 0.4s ease;
+}
+
+.flip-enter {
+	transform: rotateY(180deg);
+}
+
+.flip-leave {
+	display: none;
 }

@@ -13,15 +13,15 @@
 			<form class="flashcard-form">
 				<label for="front"
 					>Front
-					<input type="text" id="front" />
+					<input v-model="newFront" type="text" id="front" />
 				</label>
 				<label for="back"
 					>Back
-					<input type="text" id="back" />
+					<input v-model="newBack" type="text" id="back" />
 				</label>
-				<button>Add a New Card</button>
+				<button v-on:click="addCard">Add a New Card</button>
 			</form>
-			<p class="display-error">
+			<p v-show="error" class="display-error">
 				Ahhh! The flashcards need a front and a back.
 			</p>
 			<ul>
@@ -32,6 +32,7 @@
 					v-bind:key="card.index"
 					v-for="(card, index) in cards"
 					v-on:clicked="flipCard(card)"
+					v-on:delete="cards.splice(index, 1)"
 				></flashcard>
 			</ul>
 		</main>
