@@ -24,6 +24,9 @@ body {
 	display: flex;
 	justify-content: center;
 	padding-top: 2rem;
+	@media only screen and (max-width: 825px) {
+		padding-bottom: 2rem;
+	}
 }
 
 h1 {
@@ -44,6 +47,12 @@ main {
 .flashcard-form {
 	margin-bottom: 1rem;
 	text-align: center;
+	@media only screen and (max-width: 825px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 	input {
 		border-radius: 8px;
 		border: 1px solid black;
@@ -53,6 +62,11 @@ main {
 		width: 12rem;
 		font-size: 0.75rem;
 		margin-right: 0.5rem;
+		@media only screen and (max-width: 825px) {
+			margin-right: 0rem;
+			margin-bottom: 1rem;
+			display: flex;
+		}
 	}
 	button {
 		height: 2.5rem;
@@ -78,6 +92,9 @@ ul {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 1rem;
 	padding-top: 4rem;
+	@media only screen and (max-width: 825px) {
+		grid-template-columns: 1fr;
+	}
 	li {
 		transition: all 0.2s ease-in-out;
 		&:hover {
@@ -100,6 +117,11 @@ ul {
 	position: relative;
 	padding: 3rem 1rem;
 	box-shadow: -1px 3px 9px 2px rgba(0, 0, 0, 0.75);
+	@media only screen and (max-width: 825px) {
+		width: 90%;
+		height: 30rem;
+		margin: 0 auto;
+	}
 	.delete-card {
 		position: absolute;
 		right: 10px;
