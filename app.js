@@ -1,22 +1,22 @@
 const cards = [
 	{
-		front: 'Programming language used in the DOM',
-		back: 'JavaScript',
+		front: 'What are JavaScript Data Types?',
+		back: 'Number, String, Boolean, Object, Undefined',
 		flipped: false
 	},
 	{
-		front: 'JavaScript framework built by the FaceBook team',
-		back: 'React and React Native',
+		front: 'Which company developed JavaScript?',
+		back: 'Netscape is the software company',
 		flipped: false
 	},
 	{
-		front: 'Who was the first president?',
-		back: 'George Washington',
+		front: 'What is "this" keyword in JavaScript?',
+		back: '"This" keyword refers to the object from where it was called',
 		flipped: false
 	},
 	{
-		front: 'What whale has a nose like a Unicorn?',
-		back: 'Narwhals of the Artic Ocean',
+		front: 'Which symbol is used for comments in Javascript?',
+		back: '// for single line and /* for multi',
 		flipped: false
 	}
 ];
